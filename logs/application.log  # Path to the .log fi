@@ -1,0 +1,26 @@
+2024-11-15T11:24:40.463+05:30  INFO 16476 --- [http] [restartedMain] com.example.http.HttpApplication         : Starting HttpApplication using Java 22 with PID 16476 (C:\Users\rudranil.gupta\Downloads\http\http\target\classes started by rudranil.gupta in C:\Users\rudranil.gupta\Downloads\http)
+2024-11-15T11:24:40.467+05:30  INFO 16476 --- [http] [restartedMain] com.example.http.HttpApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-11-15T11:24:40.538+05:30  INFO 16476 --- [http] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\rudranil.gupta\.m2\repository\com\sun\xml\bind\jaxb-impl\4.0.5\jaxb-impl-4.0.5.jar referenced one or more files that do not exist: file:/C:/Users/rudranil.gupta/.m2/repository/com/sun/xml/bind/jaxb-impl/4.0.5/jaxb-core.jar,file:/C:/Users/rudranil.gupta/.m2/repository/com/sun/xml/bind/jaxb-impl/4.0.5/angus-activation.jar
+2024-11-15T11:24:40.539+05:30  INFO 16476 --- [http] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\rudranil.gupta\.m2\repository\com\sun\xml\bind\jaxb-core\4.0.5\jaxb-core-4.0.5.jar referenced one or more files that do not exist: file:/C:/Users/rudranil.gupta/.m2/repository/com/sun/xml/bind/jaxb-core/4.0.5/jakarta.activation-api.jar,file:/C:/Users/rudranil.gupta/.m2/repository/com/sun/xml/bind/jaxb-core/4.0.5/jakarta.xml.bind-api.jar
+2024-11-15T11:24:40.539+05:30  INFO 16476 --- [http] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-15T11:24:40.539+05:30  INFO 16476 --- [http] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-15T11:24:42.487+05:30  INFO 16476 --- [http] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-15T11:24:42.522+05:30  INFO 16476 --- [http] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-15T11:24:42.522+05:30  INFO 16476 --- [http] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-15T11:24:42.612+05:30  INFO 16476 --- [http] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-15T11:24:42.613+05:30  INFO 16476 --- [http] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2073 ms
+2024-11-15T11:24:42.786+05:30  INFO 16476 --- [http] [restartedMain] i.m.c.instrument.push.PushMeterRegistry  : Publishing metrics for OtlpMeterRegistry every 1m to http://localhost:4318/v1/metrics with resource attributes {service.name=http}
+2024-11-15T11:24:44.500+05:30  INFO 16476 --- [http] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-15T11:24:44.516+05:30  INFO 16476 --- [http] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-11-15T11:24:44.630+05:30  INFO 16476 --- [http] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-15T11:24:44.645+05:30  INFO 16476 --- [http] [restartedMain] com.example.http.HttpApplication         : Started HttpApplication in 4.704 seconds (process running for 5.533)
+2024-11-15T11:24:45.585+05:30  INFO 16476 --- [http] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-15T11:24:45.585+05:30  INFO 16476 --- [http] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-15T11:24:45.587+05:30  INFO 16476 --- [http] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-11-15T11:25:03.621+05:30  INFO 16476 --- [http] [http-nio-8080-exec-6] c.e.http.Controller.HttpController       : Sending request to Service 2 with trace ID: 46a97a018b5e7c481eadfe0c9aefa57d
+2024-11-15T11:25:03.757+05:30  INFO 16476 --- [http] [http-nio-8080-exec-6] c.e.http.Controller.HttpController       : Received response from Service 2: Hello from Service 2, Rudranil!
+2024-11-15T11:25:03.757+05:30  INFO 16476 --- [http] [http-nio-8080-exec-6] c.e.http.Controller.HttpController       : Finished spans size: 0
+2024-11-15T11:25:17.264+05:30  WARN 16476 --- [http] [otlp-metrics-publisher] i.m.registry.otlp.OtlpMeterRegistry      : Failed to publish metrics (context: url=http://localhost:4318/v1/metrics, resource-attributes={service.name=http}). Server responded with HTTP status code 404 and body 404 page not found
+
+2024-11-15T11:25:31.705+05:30  WARN 16476 --- [http] [SpringApplicationShutdownHook] i.m.registry.otlp.OtlpMeterRegistry      : Failed to publish metrics (context: url=http://localhost:4318/v1/metrics, resource-attributes={service.name=http}). Server responded with HTTP status code 404 and body 404 page not found
+
