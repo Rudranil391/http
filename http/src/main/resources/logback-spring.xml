@@ -1,19 +1,32 @@
 <configuration>
-    <!-- Console Appender for debugging -->
+    <!-- Enable debug logging for OpenTelemetryAppender -->
+    <logger name="io.opentelemetry.instrumentation.logback.appender.v1_0" level="DEBUG" />
+    <logger name="io.opentelemetry.instrumentation.logback" level="DEBUG" />
+
+<!--    <appender name="FLUENTBIT" class="com.example.http.Config.FluentBitLogbackAppender">-->
+<!--        <fluentBitEndpoint>http://localhost:2020</fluentBitEndpoint> &lt;!&ndash; Fluent Bit HTTP endpoint &ndash;&gt;-->
+<!--    </appender>-->
+
+    <!-- Define the OpenTelemetry appender -->
+    <appender name="OTEL" class="io.opentelemetry.instrumentation.logback.appender.v1_0.OpenTelemetryAppender">
+        <captureExperimentalAttributes>true</captureExperimentalAttributes>
+        <captureMdcAttributes>*</captureMdcAttributes>
+    </appender>
+
+    <!-- Console appender for local debugging -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern> %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg traceId=%X{traceId} spanId=%X{spanId}%n</pattern>
         </encoder>
     </appender>
 
-    <!-- OpenTelemetry Appender -->
-    <appender name="OPEN_TELEMETRY" class="io.opentelemetry.instrumentation.logback.v1_0.OpenTelemetryAppender">
-        <!-- Use OpenTelemetry's global SDK -->
-    </appender>
 
-    <!-- Root Logger Configuration -->
-    <root level="info">
+    <!-- Root logger configuration -->
+    <root level="INFO">
+        <!-- Send logs to both OpenTelemetry and the console -->
+        <appender-ref ref="OTEL" />
         <appender-ref ref="CONSOLE" />
-        <appender-ref ref="OPEN_TELEMETRY" />
+<!--        <appender-ref ref="FLUENTBIT" />-->
+
     </root>
 </configuration>

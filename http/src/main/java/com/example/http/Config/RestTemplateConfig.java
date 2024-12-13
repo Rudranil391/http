@@ -1,6 +1,6 @@
 package com.example.http.Config;
 
-import com.example.http.OpenTelemetryRestTemplateInterceptor;
+//import com.example.http.OpenTelemetryRestTemplateInterceptor;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.instrumentation.spring.webmvc.v5_3.SpringWebMvcTelemetry;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,32 +17,25 @@ import java.util.Collections;
 @Configuration
 public class RestTemplateConfig {
 
-    @Autowired
-    private final OpenTelemetry openTelemetry;
-    private final OpenTelemetryRestTemplateInterceptor openTelemetryRestTemplateInterceptor;
-
-    public RestTemplateConfig(OpenTelemetry openTelemetry, OpenTelemetryRestTemplateInterceptor openTelemetryRestTemplateInterceptor) {
-        this.openTelemetry = openTelemetry;
-        this.openTelemetryRestTemplateInterceptor = openTelemetryRestTemplateInterceptor;
-    }
-
-//    @Bean
-//    public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
-//        // Create the OpenTelemetry RestTemplateInterceptor
-//        RestTemplateClientHttpRequestInterceptor interceptor = new RestTemplateClientHttpRequestInterceptor(openTelemetry);
+//    @Autowired
+//    private final OpenTelemetry openTelemetry;
+//    private final OpenTelemetryRestTemplateInterceptor openTelemetryRestTemplateInterceptor;
 //
-//        // Return a RestTemplate with the interceptor
-//        return restTemplateBuilder
-//                .additionalInterceptors(interceptor)  // Adds the OpenTelemetry context propagation
-//                .build();
+//    public RestTemplateConfig(OpenTelemetry openTelemetry, OpenTelemetryRestTemplateInterceptor openTelemetryRestTemplateInterceptor) {
+//        this.openTelemetry = openTelemetry;
+//        this.openTelemetryRestTemplateInterceptor = openTelemetryRestTemplateInterceptor;
 //    }
 
-    @Bean
-    public RestTemplate restTemplate(OpenTelemetryRestTemplateInterceptor openTelemetryRestTemplateInterceptor) {
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.getInterceptors().add(openTelemetryRestTemplateInterceptor);  // Register the OpenTelemetry interceptor
-        return restTemplate;
-    }
+//    @Bean
+//    public RestTemplate restTemplate(OpenTelemetryRestTemplateInterceptor openTelemetryRestTemplateInterceptor) {
+//        RestTemplate restTemplate = new RestTemplate();
+//        restTemplate.getInterceptors().add(openTelemetryRestTemplateInterceptor);  // Register the OpenTelemetry interceptor
+//        return restTemplate;
+//    }
+   @Bean
+   public RestTemplate restTemplate() {
+    return new RestTemplate();
+}
 
 }
 
